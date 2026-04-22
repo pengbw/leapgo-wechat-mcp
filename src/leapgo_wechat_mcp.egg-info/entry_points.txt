@@ -1,0 +1,2 @@
+[console_scripts]
+wechat-mp-server = wechat_mp.server:main

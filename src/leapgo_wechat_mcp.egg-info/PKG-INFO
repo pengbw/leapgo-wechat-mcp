@@ -1,0 +1,9 @@
+Metadata-Version: 2.4
+Name: leapgo-wechat-mcp
+Version: 0.2.0
+Summary: 微信公众号 MCP 插件，通过 AI 自然语言操控公众号后台
+Requires-Python: >=3.11
+Requires-Dist: mcp>=1.0.0
+Requires-Dist: httpx
+Requires-Dist: python-dotenv
+Requires-Dist: mistune

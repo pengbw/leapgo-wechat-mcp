@@ -1,0 +1,14 @@
+[project]
+name = "leapgo-wechat-mcp"
+version = "0.2.0"
+description = "微信公众号 MCP 插件，通过 AI 自然语言操控公众号后台"
+requires-python = ">=3.11"
+dependencies = [
+    "mcp>=1.0.0",
+    "httpx",
+    "python-dotenv",
+    "mistune",
+]
+
+[project.scripts]
+wechat-mp-server = "wechat_mp.server:main"
