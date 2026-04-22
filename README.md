@@ -50,7 +50,7 @@ pip install -e .
 
 ```env
 WECHAT_APP_ID=wxdd6181c2c086c7bf
-WECHAT_APP_SECRET=cc2bb4f90c3a0374b60e285708f58a12
+WECHAT_APP_SECRET=cc2bb****58a12
 ```
 
 > AppID 和 AppSecret 登录 [微信公众平台](https://mp.weixin.qq.com) → 设置与开发 → 基本配置 中获取
@@ -104,7 +104,7 @@ mcp_servers:
     command: /root/.hermes/venv/bin/wechat-mp-server
     env:
       WECHAT_APP_ID: wxdd6181c2c086c7bf
-      WECHAT_APP_SECRET: cc2bb4f90c3a0374b60e285708f58a12
+      WECHAT_APP_SECRET: cc2bb****58a12
 ```
 
 > Hermes Agent 重启命令：`hermes restart`
@@ -136,7 +136,7 @@ Trae 基于 VS Code，通过 `settings.json` 配置 MCP Server。
       ],
       "env": {
         "WECHAT_APP_ID": "wxdd6181c2c086c7bf",
-        "WECHAT_APP_SECRET": "cc2bb4f90c3a0374b60e285708f58a12"
+        "WECHAT_APP_SECRET": "cc2bb****58a12"
       }
     }
   }
@@ -152,7 +152,7 @@ Trae 基于 VS Code，通过 `settings.json` 配置 MCP Server。
       "command": "/path/to/venv/bin/wechat-mp-server",
       "env": {
         "WECHAT_APP_ID": "wxdd6181c2c086c7bf",
-        "WECHAT_APP_SECRET": "cc2bb4f90c3a0374b60e285708f58a12"
+        "WECHAT_APP_SECRET": "cc2bb****58a12"
       }
     }
   }
