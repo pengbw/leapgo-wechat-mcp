@@ -20,7 +20,7 @@ cd leapgo-wechat-mcp
 
 **Windows（cmd）**
 ```cmd
-cd D:\mcp\leapgo-wechat-mcp
+cd /d D:\mcp\leapgo-wechat-mcp
 python -m venv venv
 venv\Scripts\activate
 pip install -e .
@@ -37,8 +37,8 @@ pip install -e .
 
 **Linux/macOS**
 ```bash
-tar -xzf wechat-mp-plugin-v0.2.tar.gz
-cd wechat-mp-plugin
+tar -xzf leapgo-wechat-mcp-v0.2.tar.gz
+cd leapgo-wechat-mcp
 python -m venv venv
 source venv/bin/activate
 pip install -e .
