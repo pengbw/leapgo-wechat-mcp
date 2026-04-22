@@ -163,6 +163,8 @@ Trae 基于 VS Code，通过 `settings.json` 配置 MCP Server。
 
 配置完成后，在 Trae 左侧 MCP 面板查看 `wechat_mp` 状态为 ✅ Connected 即成功。
 
+![Trae MCP 连接成功](http://localhost:9000/leapgo/img/trae-mcp-connected.jpg)
+
 ---
 
 ## 📁 项目结构
