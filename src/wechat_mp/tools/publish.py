@@ -13,7 +13,7 @@ def submit_publish(media_id: str) -> dict:
         media_id: 草稿的 media_id
     """
     token = get_access_token()
-    url = f"https://api.weixin.qq.com/cgi-bin/freepublish/submitpublish?access_token={token}"
+    url = f"https://api.weixin.qq.com/cgi-bin/freepublish/submit?access_token={token}"
     payload = {"media_id": media_id}
     with httpx.Client(timeout=30) as client:
         resp = client.post(url, json=payload)
