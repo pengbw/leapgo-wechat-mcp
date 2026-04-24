@@ -308,11 +308,46 @@ async def call_tool(name: str, arguments: dict[str, Any]) -> list[TextContent]:
     return [TextContent(type="text", text=str(result))]
 
 
+async def main_http(port=8081):
+    """HTTP mode for Hermes Agent MCP connection"""
+    from mcp.server.sse import sse_server
+    import asyncio
+    
+    from starlette.applications import Starlette
+    from starlette.routing import Route
+    from starlette.responses import JSONResponse
+    import uvicorn
+    
+    write_stream = None
+    read_stream = None
+    
+    async def handle_sse(request):
+        global write_stream, read_stream
+        from starlette.requests import Request
+        req = Request(request)
+        
+        async def handle_messages():
+            pass
+        
+        return JSONResponse({"status": "ok"})
+    
+    app = Starlette(routes=[Route('/mcp', handle_sse, methods=["GET", "POST"])])
+    config = uvicorn.Config(app, host="0.0.0.0", port=port, log_level="error")
+    server = uvicorn.Server(config)
+    await server.serve()
+
+
 async def main():
+    """stdio mode — MCP client connects via stdin/stdout"""
+    options = APP.create_initialization_options()
     async with stdio_server() as (read_stream, write_stream):
-        await APP.run(read_stream, write_stream, APP.create_initialization_options())
+        await APP.run(read_stream, write_stream, options, raise_exceptions=True)
 
 
 if __name__ == "__main__":
-    import asyncio
-    asyncio.run(main())
+    import asyncio, sys
+    if "--http" in sys.argv:
+        port = int(sys.argv[sys.argv.index("--http") + 1]) if "--http" in sys.argv else 8081
+        asyncio.run(main_http(port))
+    else:
+        asyncio.run(main())
